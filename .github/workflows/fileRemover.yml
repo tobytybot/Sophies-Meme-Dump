@@ -23,3 +23,10 @@ jobs:
       - name: Run a one-line script
         run: |
           rm *.mp4
+          
+      - name: Commit
+        run: |
+          git config --global user.name 'Automation Bot'
+          git config --global user.email 'BenDev9@users.noreply.github.com'
+          git commit -am "Automated Commit - Updated dictionary"
+          git push
