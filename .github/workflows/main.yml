@@ -1,0 +1,29 @@
+name: Continuous Integration
+
+# Controls when the action will run. 
+on:
+  schedule:
+  #Daily run
+  - cron: "0 0 * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build_dict:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v2
+      # Runs the extension gathering script
+      - name: Run extension gathering script
+        run: |
+          python extensionCollecter.py
+          cat filenameDict.txt
+      - name: Commit dictionary
+        run: |
+          git config --global user.name 'Automation Bot'
+          git config --global user.email 'BenDev9@users.noreply.github.com'
+          git commit -am "Automated Commit - Updated dictionary"
+          git push
