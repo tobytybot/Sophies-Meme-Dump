@@ -20,11 +20,16 @@ jobs:
       # Removes all of the files in the repo
       - name: Remove files
         run: |
-          rm *
+          find . -type f -not \( -name 'extensionCollecter.py' -or -name 'filenameDict.txt' \) -delete
           
       - name: Commit
         run: |
           git config --global user.name 'Automation Bot'
           git config --global user.email 'BenDev9@users.noreply.github.com'
-          git commit -am "Automated Commit - Updated files"
-          git push
+          if ! git diff-files --quiet --ignore-submodules --
+          then
+              git commit -am "Automated Commit - Updated dictionary"
+              git push
+          else
+              echo Already up to date
+          fi
