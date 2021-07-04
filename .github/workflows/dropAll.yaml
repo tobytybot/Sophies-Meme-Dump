@@ -20,7 +20,7 @@ jobs:
       # Removes all of the files in the repo
       - name: Remove files
         run: |
-          find . -type f -not \( -name 'extensionCollecter.py' -or -name 'filenameDict.txt' \) -delete
+          find . -not \( -name 'extensionCollecter.py' -or -name 'filenameDict.txt' -or -name '.git' \) -delete
           
       - name: Commit
         run: |
