@@ -20,19 +20,19 @@ jobs:
       # Removes all of the files in the repo
       - name: Remove files
         run: |
-          if [[ -f *.png ]] 
+          if [[ -f "*.png" ]] 
           then
             rm *.png 
           fi
-          if [[ - *.jpg ]] 
+          if [[ - "*.jpg" ]] 
           then
             rm *.jpg 
           fi
-          if [[ - *.gif ]] 
+          if [[ - "*.gif" ]] 
           then
             rm *.gif 
           fi
-          if [[ - *.jpeg ]] 
+          if [[ - "*.jpeg" ]] 
           then
             rm *.jpeg 
           fi
