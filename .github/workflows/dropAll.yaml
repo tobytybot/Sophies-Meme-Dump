@@ -23,6 +23,7 @@ jobs:
           rm *.png
           rm *.jpg
           rm *.gif
+          rm *.jpeg
           
       - name: Commit
         run: |
