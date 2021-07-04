@@ -20,10 +20,10 @@ jobs:
       # Removes all of the files in the repo
       - name: Remove files
         run: |
-          rm *.png
-          rm *.jpg
-          rm *.gif
-          rm *.jpeg
+          if [[ -f *.png ]] rm *.png
+          if [[ - *.jpg ]] rm *.jpg
+          if [[ - *.gif ]] rm *.gif
+          if [[ - *.jpeg ]] rm *.jpeg
           
       - name: Commit
         run: |
